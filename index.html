@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mercedes McAndrew — Director, Product Marketing · Dataiku</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+  --bg:       #173232;
+  --bg1:      #1D3C3C;
+  --bg2:      #224242;
+  --bg3:      #274848;
+  --mint:     #52D4BE;
+  --mint-dim: rgba(82,212,190,0.10);
+  --mint-b:   rgba(82,212,190,0.22);
+  --mint-b2:  rgba(82,212,190,0.40);
+  --white:    #FFFFFF;
+  --text:     #DFF0EE;
+  --muted:    rgba(223,240,238,0.52);
+  --muted2:   rgba(223,240,238,0.28);
+  --border:   rgba(82,212,190,0.10);
+  --border2:  rgba(82,212,190,0.20);
+  --green:    #34D399;
+  --green-bg: rgba(52,211,153,0.10);
+  --amber:    #FBBF24;
+  --amber-bg: rgba(251,191,36,0.10);
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Outfit',system-ui,sans-serif;
+  font-size:15px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+/* ─── WRAPPER ─── */
+.page{max-width:1080px;margin:0 auto;padding:0 32px}
+
+/* ─── TOP NAV ─── */
+.top-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 32px;height:56px;
+  background:var(--bg);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:200;gap:16px;
+}
+.tn-left{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.tn-brand{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.tn-bird{width:24px;height:24px;flex-shrink:0}
+.tn-wordmark{font-weight:700;font-size:15px;letter-spacing:-0.01em;color:var(--white)}
+.tn-pipe{width:1px;height:22px;background:var(--border2);flex-shrink:0;margin:0 4px}
+.tn-name{font-size:13px;font-weight:700;color:var(--white);line-height:1.25}
+.tn-role{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);line-height:1.25;
+}
+.tn-brief{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--muted2);
+}
+
+/* ─── TAB BAR ─── */
+.tab-bar-wrap{
+  border-bottom:1px solid var(--border);
+  background:var(--bg);
+  position:sticky;top:56px;z-index:100;
+}
+.tab-bar-inner{display:flex;gap:0;overflow-x:auto}
+.tnt{
+  font-family:'Outfit',sans-serif;font-size:13.5px;font-weight:500;
+  color:var(--muted);background:none;border:none;cursor:pointer;
+  padding:14px 22px;white-space:nowrap;
+  border-bottom:2px solid transparent;
+  transition:color .18s,border-color .18s;
+  margin-bottom:-1px;letter-spacing:0.01em;
+}
+.tnt.active{color:var(--mint);border-bottom-color:var(--mint)}
+.tnt:hover:not(.active){color:var(--text)}
+.tn-tabs{display:flex;align-items:center;gap:2px}
+.tnt{
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;
+  padding:7px 16px;border-radius:6px;border:none;cursor:pointer;
+  background:transparent;color:var(--muted);
+  transition:color .15s,background .15s;white-space:nowrap;
+}
+.tnt:hover:not(.active){color:var(--text)}
+.tnt.active{background:var(--mint);color:#173232;font-weight:600}
+.tn-status{
+  display:flex;align-items:center;gap:7px;flex-shrink:0;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  color:var(--mint);letter-spacing:0.05em;
+}
+.tn-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--mint);flex-shrink:0;
+  box-shadow:0 0 6px rgba(82,212,190,.5);
+}
+
+/* ─── HERO ─── */
+.hero{padding:56px 0 48px;border-bottom:1px solid var(--border)}
+.hero h1{
+  font-size:clamp(38px,5.5vw,58px);font-weight:700;
+  letter-spacing:-0.03em;line-height:1.06;
+  color:var(--white);margin-bottom:22px;max-width:680px;
+}
+.hero h1 .a{color:var(--mint)}
+.hero-sub{
+  font-size:16px;color:var(--muted);line-height:1.75;
+  max-width:540px;margin-bottom:32px;
+}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:0.07em;text-transform:uppercase;
+  border:1px solid var(--border2);border-radius:4px;
+  padding:5px 11px;color:var(--muted);
+}
+
+/* ─── TAB PAGES ─── */
+.tpage{display:none;padding:56px 0 80px}
+.tpage.active{display:block}
+
+/* ─── SHARED COMPONENTS ─── */
+.kicker{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--mint);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.kicker::before{content:'';width:16px;height:1px;background:var(--mint)}
+
+h2{
+  font-size:clamp(22px,2.8vw,30px);font-weight:700;
+  letter-spacing:-0.02em;color:var(--white);
+  line-height:1.2;margin-bottom:28px;
+}
+h2 .a{color:var(--mint)}
+
+.intro-box{
+  background:var(--mint-dim);border:1px solid var(--mint-b);
+  border-radius:8px;padding:18px 22px;margin-bottom:28px;
+}
+.intro-box p{font-size:13.5px;color:var(--muted);line-height:1.7}
+
+/* ─── INTERACTIVE MATCH ─── */
+.match-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+@media(max-width:700px){.match-layout{grid-template-columns:1fr}}
+
+.panel-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:0.13em;text-transform:uppercase;
+  color:var(--muted2);margin-bottom:12px;
+  padding-bottom:10px;border-bottom:1px solid var(--border);
+}
+
+.jd-list{display:flex;flex-direction:column;gap:6px}
+.jdi{
+  display:flex;align-items:flex-start;gap:10px;
+  background:var(--bg1);border:1px solid var(--border);
+  border-radius:8px;padding:13px 15px;cursor:pointer;
+  transition:background .15s,border-color .15s,transform .12s;
+}
+.jdi:hover{background:var(--bg2);border-color:var(--border2)}
+.jdi.active{background:var(--mint-dim);border-color:var(--mint-b2);transform:translateX(3px)}
+.jdi-dot{
+  width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:5px;
+  background:var(--border2);transition:background .15s;
+}
+.jdi.active .jdi-dot{background:var(--mint)}
+.jdi-text{font-size:13px;color:var(--muted);line-height:1.55;transition:color .15s}
+.jdi.active .jdi-text{color:var(--text)}
+
+.proof-stack{display:flex;flex-direction:column;gap:8px}
+.pcard{
+  background:var(--bg1);border:1px solid var(--border);
+  border-radius:8px;padding:18px 20px;
+  opacity:0;transform:translateY(6px);
+  transition:opacity .22s,transform .22s,border-color .18s;
+}
+.pcard.vis{opacity:1;transform:none}
+.pcard:hover{border-color:var(--border2)}
+.pcard-co{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.09em;text-transform:uppercase;
+  color:var(--mint);margin-bottom:6px;
+}
+.pcard-title{font-size:13.5px;font-weight:600;color:var(--white);margin-bottom:6px;line-height:1.35}
+.pcard-body{font-size:13px;color:var(--muted);line-height:1.65}
+.pcard-metric{
+  display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+  background:var(--mint-dim);border:1px solid var(--mint-b);
+  border-radius:4px;padding:4px 10px;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mint);
+}
+
+/* ─── IMPACT ─── */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px}
+@media(max-width:700px){.stat-row{grid-template-columns:1fr 1fr}}
+.stat-card{
+  background:var(--bg1);border:1px solid var(--border);
+  border-radius:8px;padding:20px;text-align:center;
+}
+.stat-n{
+  font-size:32px;font-weight:700;letter-spacing:-0.03em;
+  color:var(--mint);line-height:1;margin-bottom:6px;
+}
+.stat-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted2)}
+
+.impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.impact-grid{grid-template-columns:1fr}}
+.impact-card{
+  background:var(--bg1);border:1px solid var(--border);
+  border-radius:8px;padding:20px;
+}
+.impact-co{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.09em;text-transform:uppercase;
+  color:var(--mint);margin-bottom:8px;
+}
+.impact-card h3{font-size:14px;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.35}
+.impact-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.impact-list li{
+  font-size:13px;color:var(--muted);line-height:1.55;
+  padding-left:13px;position:relative;
+}
+.impact-list li::before{
+  content:'·';color:var(--mint);position:absolute;left:0;
+  font-size:18px;line-height:1.3;font-weight:700;
+}
+.impact-metric{
+  display:inline-block;margin-top:10px;
+  background:var(--mint-dim);border:1px solid var(--mint-b);
+  border-radius:4px;padding:4px 10px;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mint);
+}
+
+/* ─── CAREER ─── */
+.career-timeline{display:flex;flex-direction:column;gap:0}
+.career-item{
+  display:grid;grid-template-columns:160px 1fr;gap:24px;
+  padding:24px 0;border-bottom:1px solid var(--border);
+}
+@media(max-width:600px){.career-item{grid-template-columns:1fr;gap:8px}}
+.career-item:last-child{border-bottom:none}
+.career-dates{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  color:var(--muted2);letter-spacing:.06em;padding-top:3px;
+  text-transform:uppercase;
+}
+.career-co{font-size:15px;font-weight:700;color:var(--white);margin-bottom:2px}
+.career-title{font-size:13px;color:var(--mint);font-weight:500;margin-bottom:10px}
+.career-bullets{list-style:none;display:flex;flex-direction:column;gap:6px}
+.career-bullets li{
+  font-size:13px;color:var(--muted);line-height:1.55;
+  padding-left:13px;position:relative;
+}
+.career-bullets li::before{
+  content:'·';color:var(--mint);position:absolute;left:0;
+  font-size:18px;line-height:1.3;font-weight:700;
+}
+
+.skills-section{margin-top:40px}
+.skills-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.skill-tag{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--border2);border-radius:4px;
+  padding:5px 11px;color:var(--muted);
+  background:var(--bg1);
+}
+
+/* ─── EDUCATION & AFFILIATIONS ─── */
+.edu-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  margin-top:32px;
+}
+@media(max-width:600px){.edu-grid{grid-template-columns:1fr}}
+.edu-card{
+  background:var(--bg1);border:1px solid var(--border);
+  border-radius:8px;padding:20px 22px;
+}
+.edu-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:0.13em;text-transform:uppercase;
+  color:var(--muted2);margin-bottom:12px;
+}
+.edu-line{
+  font-size:13.5px;color:var(--muted);line-height:1.6;
+}
+.edu-line+.edu-line{margin-top:6px}
+
+/* ─── FOOTER ─── */
+footer{
+  border-top:1px solid var(--border);padding:28px 0;
+}
+.foot-inner{
+  display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:12px;
+}
+footer p{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);
+}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .45s,transform .45s}
+.reveal.vis{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- ── TOP NAV ── -->
+<nav class="top-nav">
+  <div class="tn-left">
+    <div class="tn-brand">
+      <svg class="tn-bird" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="16" cy="11" rx="6.5" ry="5" fill="#52D4BE" transform="rotate(-12 16 11)"/>
+        <path d="M10 12.5 Q5 8.5 6.5 15 Q9 19 13 15Z" fill="#52D4BE" opacity=".75"/>
+        <circle cx="19.5" cy="7.5" r="3.8" fill="#52D4BE"/>
+        <circle cx="21" cy="6.8" r=".95" fill="#173232"/>
+        <path d="M23 7 L26 8 L23 8.8Z" fill="white" opacity=".9"/>
+        <path d="M9.5 14 Q4 16 2 20 Q6 17 9.5 16Z" fill="#52D4BE" opacity=".55"/>
+        <rect x="2" y="21.5" width="22" height="2.2" rx="1.1" fill="#52D4BE" opacity=".8"/>
+      </svg>
+      <span class="tn-wordmark">dataiku</span>
+    </div>
+    <div class="tn-pipe"></div>
+    <div>
+      <div class="tn-name">Mercedes McAndrew</div>
+      <div class="tn-role">Director, Product Marketing — Candidate</div>
+    </div>
+  </div>
+  <span class="tn-brief">Candidate Brief · 2026</span>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="page">
+<section class="hero">
+  <h1>The PMM function from<br><span class="a">customer insight</span> to<br><span class="a">platform narrative</span> to<br><span class="a">pipeline.</span></h1>
+  <p class="hero-sub">15+ years of B2B product marketing across AI platforms, enterprise SaaS, and multi-product organizations. Every JD requirement maps to a specific proof point from the record.</p>
+  <div class="chips">
+    <span class="chip">Platform Narrative</span>
+    <span class="chip">Flagship Launches</span>
+    <span class="chip">Analyst Relations</span>
+    <span class="chip">Executive Storytelling</span>
+    <span class="chip">Pricing &amp; Packaging</span>
+  </div>
+</section>
+</div>
+
+<!-- ── TAB BAR ── -->
+<div class="tab-bar-wrap">
+  <div class="page">
+    <div class="tab-bar-inner">
+      <button class="tnt active" onclick="switchTop('jd',this)">JD Match</button>
+      <button class="tnt" onclick="switchTop('impact',this)">Impact</button>
+      <button class="tnt" onclick="switchTop('career',this)">Career</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 1 · JD MATCH
+════════════════════════════════ -->
+<div id="top-jd" class="tpage active">
+<div class="page">
+
+  <div class="kicker">Interactive JD Match</div>
+  <h2>Click any requirement.<br><span class="a">See the proof.</span></h2>
+
+  <div class="intro-box">
+    <p>Every item on the left is pulled word-for-word from the Dataiku JD. Click it and the matching resume proof points appear on the right — specific deliverables and outcomes from the work history, not rewrites of the JD.</p>
+  </div>
+
+  <div class="match-layout">
+
+    <!-- LEFT: JD list -->
+    <div>
+      <div class="panel-label">JD Requirements — click to reveal proof</div>
+      <div class="jd-list">
+        <div class="jdi active" data-k="narrative" onclick="selectJD(this,'narrative')">
+          <div class="jdi-dot"></div>
+          <div class="jdi-text">Own the master messaging architecture and AI Success Formula across every product, persona, and campaign</div>
+        </div>
+        <div class="jdi" data-k="launches" onclick="selectJD(this,'launches')">
+          <div class="jdi-dot"></div>
+          <div class="jdi-text">Lead end-to-end GTM for Dataiku's most strategic launches: positioning, messaging, sales enablement, analyst briefings, integrated campaigns</div>
+        </div>
+        <div class="jdi" data-k="governance" onclick="selectJD(this,'governance')">
+          <div class="jdi-dot"></div>
+          <div class="jdi-text">Own positioning for Dataiku's governance framework; translate EU AI Act, NIST AI RMF into sales talk tracks and customer assets</div>
+        </div>
+        <div class="jdi" data-k="analysts" onclick="selectJD(this,'analysts')">
+          <div class="jdi-dot"></div>
+          <div class="jdi-text">Lead Gartner, Forrester, and IDC engagement including MQ/Wave briefings and strategic inquiries</div>
+        </div>
+        <div class="jdi" data-k="exec" onclick="selectJD(this,'exec')">
+          <div class="jdi-dot"></div>
+          <div class="jdi-text">Own the company narrative deck, keynote content, and competitive positioning for high-stakes customer and executive conversations</div>
+        </div>
+        <div class="jdi" data-k="years" onclick="selectJD(this,'years')">
+          <div class="jdi-dot"></div>
+          <div class="jdi-text">8–12 years B2B PMM at a data, AI, ML, or enterprise software company</div>
+        </div>
+        <div class="jdi" data-k="ai" onclick="selectJD(this,'ai')">
+          <div class="jdi-dot"></div>
+          <div class="jdi-text">Deep fluency in the AI/ML stack — LLMs, agents, MLOps, governance</div>
+        </div>
+        <div class="jdi" data-k="pricing" onclick="selectJD(this,'pricing')">
+          <div class="jdi-dot"></div>
+          <div class="jdi-text">Experience contributing to pricing and packaging narrative for consumption- or usage-based models</div>
+        </div>
+        <div class="jdi" data-k="builder" onclick="selectJD(this,'builder')">
+          <div class="jdi-dot"></div>
+          <div class="jdi-text">Strategic operator; builder mindset; direct, low-ego collaborator</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Proof panel -->
+    <div>
+      <div class="panel-label">Resume proof — verified from work history</div>
+
+      <div id="pk-narrative" class="proof-stack">
+        <div class="pcard vis">
+          <div class="pcard-co">AvidXchange · Director of Product Marketing</div>
+          <div class="pcard-title">Customer-informed platform narrative via CAB program</div>
+          <div class="pcard-body">Built and owned a robust Customer Advisory Board program, recruiting senior AP leaders representing $250K in annual transaction revenue, and used those insights to directly shape platform messaging. Translated 70–80% of executive CAB insights into roadmap and monetization decisions — ensuring the narrative reflected how customers actually described value, not how the product team assumed they did.</div>
+        </div>
+        <div class="pcard vis">
+          <div class="pcard-co">Cannonball / Visa</div>
+          <div class="pcard-title">One-Visa narrative across three business lines</div>
+          <div class="pcard-body">Created strategic processes to unify messaging across Visa Direct, Visa Protect, and Visa Commercial Solutions into a cohesive single narrative. Built modular content frameworks for scalable deployment across paid, event, and partner channels.</div>
+        </div>
+        <div class="pcard vis">
+          <div class="pcard-co">Salesforce · Senior PMM, Service Cloud</div>
+          <div class="pcard-title">Service Cloud Franchise — cross-functional integrated launch</div>
+          <div class="pcard-body">Launched the Service Cloud Franchise working cross-functionally with content, creative, Trailblazer marketing, regional counterparts, and strategic events to debut at Tier 1 Salesforce World Tours — leading with authentic customer stories to drive new prospect engagement. Owned Service Cloud programming at Dreamforce 2021, developing event strategy aligned to business goals and guiding a team of 60+ to deliver a hybrid experience to 7,500+ viewers, with CAB member stories woven into keynotes, breakouts, and theater sessions.</div>
+        </div>
+      </div>
+
+      <div id="pk-launches" class="proof-stack" style="display:none">
+        <div class="pcard">
+          <div class="pcard-co">Kustomer · Corporate Marketing Director</div>
+          <div class="pcard-title">Full relaunch GTM — AI-focused, end to end</div>
+          <div class="pcard-body">Led the complete relaunch from positioning through execution: AI-focused webinar, product launch, Virtual Summit, guerrilla tactics, earned media. Built KPI framework linking launch execution to revenue performance.</div>
+          <span class="pcard-metric">$7M ARR influenced</span>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">Intuit · Product Marketing Contractor (current)</div>
+          <div class="pcard-title">0 to 1 GTM for new small business finance product</div>
+          <div class="pcard-body">Leading 0-to-1 go-to-market and product launch strategy including positioning, AI feature value props, and pricing and packaging. The full launch stack, from scratch, right now.</div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">Salesforce · Service Cloud</div>
+          <div class="pcard-title">Two global enablement series, 2,000 sellers</div>
+          <div class="pcard-body">Led two Service Cloud enablement series delivered by exec leadership across AMER, EMEA, and APAC. Pivoted to virtual strategy during COVID to impact $1.5B ACV in FY22 at 26% YoY growth.</div>
+        </div>
+      </div>
+
+      <div id="pk-governance" class="proof-stack" style="display:none">
+        <div class="pcard">
+          <div class="pcard-co">Intuit · Product Marketing Contractor (current)</div>
+          <div class="pcard-title">Responsible AI value prop positioning</div>
+          <div class="pcard-body">Defining value props for AI-powered product features — which inherently means positioning responsible AI, capability limits, and trust frameworks for buyers who need to feel safe before adoption.</div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">AvidXchange · CAB Program</div>
+          <div class="pcard-title">Closed-loop VoC engine driving roadmap governance</div>
+          <div class="pcard-body">Built the VoC engine that translated 70 to 80% of executive CAB insights into roadmap and monetization decisions, improving retention by 5%.</div>
+        </div>
+      </div>
+
+      <div id="pk-analysts" class="proof-stack" style="display:none">
+        <div class="pcard">
+          <div class="pcard-co">AvidXchange · Director of Product Marketing</div>
+          <div class="pcard-title">Direct AR ownership — Gartner, Forrester, IDC, Info-Tech</div>
+          <div class="pcard-body">Re-ignited the AR program and briefed analysts from Gartner, Forrester, IDC, and Info-Tech on product innovations and market differentiation. Owned, not supported.</div>
+          <span class="pcard-metric">+2 research reports in 6 months</span>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">Kustomer · Corporate Marketing Director</div>
+          <div class="pcard-title">AR oversight through high-stakes Meta divestiture</div>
+          <div class="pcard-body">Oversaw PR and AR relationships to ensure Kustomer was included in media opportunities and analyst reports during and after the Meta divestiture — a critical moment for analyst credibility.</div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">Salesforce · Service Cloud</div>
+          <div class="pcard-title">Analyst briefing cycle contributor</div>
+          <div class="pcard-body">Contributed to Gartner and Forrester engagement cycles — evidence preparation, positioning documentation, briefing narrative review. Participated in inquiry calls.</div>
+        </div>
+      </div>
+
+      <div id="pk-exec" class="proof-stack" style="display:none">
+        <div class="pcard">
+          <div class="pcard-co">Salesforce Dreamforce '19</div>
+          <div class="pcard-title">Human-Centric Service keynote narrative</div>
+          <div class="pcard-body">Designed the narrative that guided messaging and positioning for the Dreamforce '19 keynote. The CEO-level story delivered on the biggest stage.</div>
+          <span class="pcard-metric">3,500 in-person · 465K+ live online</span>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">Intuit · Product Marketing Contractor</div>
+          <div class="pcard-title">Competitive positioning for AI-powered product features</div>
+          <div class="pcard-body">Evaluating the competitive landscape and defining positioning for AI-powered product features — mapping how Intuit's capabilities differentiate against competitors and translating that into messaging for high-stakes customer conversations.</div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">AvidXchange</div>
+          <div class="pcard-title">Competitive intelligence arming sales leadership</div>
+          <div class="pcard-body">Led competitive intel efforts using AI workflows to arm sellers with real-time competitor pricing insights. G2 program generated 16 customer reviews feeding the executive proof-point library.</div>
+        </div>
+      </div>
+
+      <div id="pk-years" class="proof-stack" style="display:none">
+        <div class="pcard">
+          <div class="pcard-co">Career summary</div>
+          <div class="pcard-title">15+ years across AI, SaaS, and enterprise software</div>
+          <div class="pcard-body">Intuit (AI-powered financial platform, 2026–present) → AvidXchange (AI and AP automation, 2025–26) → Cannonball/Visa (2024–25) → Kustomer/Meta (AI customer service, 2022–24) → Salesforce (2011–22). The AI platform experience is explicit, not inferred.</div>
+        </div>
+      </div>
+
+      <div id="pk-ai" class="proof-stack" style="display:none">
+        <div class="pcard">
+          <div class="pcard-co">Intuit · current</div>
+          <div class="pcard-title">AI feature value prop definition — active, right now</div>
+          <div class="pcard-body">Defining value props for AI-powered product features at Intuit today. Not historical AI experience — current, active AI platform PMM work at a global fintech leader.</div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">AvidXchange</div>
+          <div class="pcard-title">AI agent workflows and competitive intelligence</div>
+          <div class="pcard-body">Led messaging for AI agent capabilities. Built competitive intel workflows using Klue's AI tooling. Positioned AI automation for CFO buyers who needed to trust the technology before adoption.</div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">Kustomer · 3 products, 2 AI launches</div>
+          <div class="pcard-title">AI customer service platform launches</div>
+          <div class="pcard-body">Led messaging for 3 new products including 2 AI advancements. Defined Kustomer's narrative, positioning, and messaging for an AI-first CX platform. Daily user of Claude, ChatGPT, Gemini, Perplexity, Klue, and Gong.</div>
+        </div>
+      </div>
+
+      <div id="pk-pricing" class="proof-stack" style="display:none">
+        <div class="pcard">
+          <div class="pcard-co">Intuit · current</div>
+          <div class="pcard-title">Pricing and packaging model evaluation</div>
+          <div class="pcard-body">Evaluating and defining pricing and packaging models aligned to customer value and competitive landscape. Direct, active ownership at a global fintech platform.</div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">Kustomer · Corporate Marketing Director</div>
+          <div class="pcard-title">Pricing tiers for three new product launches</div>
+          <div class="pcard-body">Partnered with product and finance to define pricing tiers and packaging strategies for new offerings including 2 AI advancements.</div>
+        </div>
+      </div>
+
+      <div id="pk-builder" class="proof-stack" style="display:none">
+        <div class="pcard">
+          <div class="pcard-co">AvidXchange · 6 months</div>
+          <div class="pcard-title">CAB program built from zero</div>
+          <div class="pcard-body">Independently recruited and engaged senior AP leaders representing $250K in annual transaction revenue for a Customer Advisory Board — from scratch, in six months.</div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">Cannonball Agency</div>
+          <div class="pcard-title">Chose independence over the corporate default</div>
+          <div class="pcard-body">Left Kustomer to build and own a client portfolio as an independent consultant — Visa, B2B campaigns, multi-line narrative architecture. The builder's path, not the safe one.</div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-co">AvidXchange</div>
+          <div class="pcard-title">VoC engine built zero to closed-loop</div>
+          <div class="pcard-body">Built the closed-loop VoC engine from nothing: structured interview process, insight synthesis, roadmap feedback loop, CAB program, G2 reviews. Created structure where there was none. Improved retention by 5%.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- end match-layout -->
+
+</div><!-- end page -->
+</div><!-- end top-jd -->
+
+
+<!-- ════════════════════════════════
+     TAB 2 · PRACTICE FRAMEWORK
+════════════════════════════════ -->
+
+
+
+<!-- ════════════════════════════════
+     TAB 3 · IMPACT
+════════════════════════════════ -->
+<div id="top-impact" class="tpage">
+<div class="page">
+
+  <div class="kicker">Measured Outcomes</div>
+  <h2>The numbers behind<br><span class="a">the proof points.</span></h2>
+
+  <div class="stat-row reveal">
+    <div class="stat-card">
+      <div class="stat-n">$7M</div>
+      <div class="stat-label">ARR influenced · Kustomer AI launch</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">465K+</div>
+      <div class="stat-label">Dreamforce '19 live viewers</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">$1.5B</div>
+      <div class="stat-label">ACV impacted in FY22 virtual pivot</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">60%</div>
+      <div class="stat-label">Share-of-voice growth in 7 months</div>
+    </div>
+  </div>
+
+  <div class="stat-row reveal">
+    <div class="stat-card">
+      <div class="stat-n">16</div>
+      <div class="stat-label">G2 reviews · elevating mid-market positioning</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">2,000+</div>
+      <div class="stat-label">Global sellers enabled · Salesforce</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">70–80%</div>
+      <div class="stat-label">CAB insights converted to roadmap decisions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">5%</div>
+      <div class="stat-label">Retention improvement via VoC engine</div>
+    </div>
+  </div>
+
+  <div class="impact-grid reveal">
+    <div class="impact-card">
+      <div class="impact-co">Kustomer · 2022–2024</div>
+      <h3>Relaunch and AI Platform GTM</h3>
+      <ul class="impact-list">
+        <li>Multi-channel relaunch campaign: AI webinar, product launch, Virtual Summit, guerrilla tactics, earned media</li>
+        <li>Increased share of voice 60% within 7 months of Meta divestiture</li>
+        <li>Launched 3 products including 2 AI advancements with partner P&amp;P strategy</li>
+        <li>Built KPI framework linking launch execution to revenue performance</li>
+      </ul>
+      <span class="impact-metric">$7M ARR influenced</span>
+    </div>
+    <div class="impact-card">
+      <div class="impact-co">Salesforce · 2011–2022</div>
+      <h3>Dreamforce and Global Enablement</h3>
+      <ul class="impact-list">
+        <li>Human-Centric Service narrative for Dreamforce '19 keynote — 465K+ live viewers</li>
+        <li>Owned Dreamforce '21 advocacy programming for 7,500+ hybrid viewers</li>
+        <li>Led two Service Cloud enablement series enabling 2,000+ global sellers</li>
+        <li>Virtual event pivot during COVID impacting $1.5B ACV at 26% YoY growth</li>
+      </ul>
+      <span class="impact-metric">$1.5B ACV · 26% YoY</span>
+    </div>
+    <div class="impact-card">
+      <div class="impact-co">AvidXchange · 2025–2026</div>
+      <h3>Analyst Relations and VoC Architecture</h3>
+      <ul class="impact-list">
+        <li>Personally briefed Gartner, Forrester, IDC, Info-Tech on AI platform innovations</li>
+        <li>Increased standing across 2 analyst research reports within 6 months</li>
+        <li>Built closed-loop VoC engine: CAB → roadmap → monetization decisions</li>
+        <li>G2 strategy generated 16 new customer reviews elevating mid-market positioning</li>
+      </ul>
+      <span class="impact-metric">+2 research reports · 6 months</span>
+    </div>
+    <div class="impact-card">
+      <div class="impact-co">Meta / Kustomer · 2022–2023</div>
+      <h3>Pipeline and Demand Generation</h3>
+      <ul class="impact-list">
+        <li>Integrated campaign across digital, audio, print, OOH, and community reaching 50K+ prospects</li>
+        <li>Defined segmentation and GTM strategy impacting $2.6M in pipeline</li>
+        <li>Executed multi-channel campaign touching $2M in pipe</li>
+        <li>Community-based focus group testing used to develop and launch new messaging at tentpole event</li>
+      </ul>
+      <span class="impact-metric">$2.6M pipeline impact</span>
+    </div>
+  </div>
+
+</div>
+</div><!-- end top-impact -->
+
+
+<!-- ════════════════════════════════
+     TAB 4 · CAREER
+════════════════════════════════ -->
+<div id="top-career" class="tpage">
+<div class="page">
+
+  <div class="kicker">Work History</div>
+  <h2>15+ years across<br><span class="a">AI, SaaS, and enterprise.</span></h2>
+
+  <div class="career-timeline reveal">
+
+    <div class="career-item">
+      <div class="career-dates">Mar 2026 – Present</div>
+      <div>
+        <div class="career-co">Intuit</div>
+        <div class="career-title">Product Marketing Contractor</div>
+        <ul class="career-bullets">
+          <li>Building and executing an integrated early-stage growth plan spanning SEO, GEO, content marketing, referral programs, influencer and partner marketing, and lifecycle retention</li>
+          <li>Leading 0-to-1 go-to-market and product launch strategy for a new small business finance product</li>
+          <li>Defining core product positioning and developing value props for AI-powered product features</li>
+          <li>Evaluating and defining pricing and packaging models aligned to customer value and competitive landscape</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-dates">Mar 2025 – Feb 2026</div>
+      <div>
+        <div class="career-co">AvidXchange</div>
+        <div class="career-title">Director of Product Marketing</div>
+        <ul class="career-bullets">
+          <li>Re-ignited AR program, briefing Gartner, Forrester, IDC, and Info-Tech — increased standing across 2 research reports within 6 months</li>
+          <li>Built closed-loop VoC engine translating 70–80% of executive CAB insights into roadmap and monetization decisions, improving retention by 5%</li>
+          <li>Owned and scaled Customer Advisory Board, independently recruiting senior AP leaders representing $250K annual transaction revenue in six months</li>
+          <li>Led competitive intel using AI workflows to arm sellers with real-time competitor pricing insights</li>
+          <li>G2 strategy generated 16 new customer reviews elevating mid-market positioning</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-dates">Oct 2024 – Mar 2025</div>
+      <div>
+        <div class="career-co">Cannonball Creative Agency</div>
+        <div class="career-title">Consultant, Client Engagement Lead, Campaign Strategist</div>
+        <ul class="career-bullets">
+          <li>B2B campaign management across Visa Direct, Visa Protect, and Visa Commercial Solutions</li>
+          <li>Built modular content frameworks to support scalable SEO, paid, event, and partner amplification strategies</li>
+          <li>Designed executive-level event programs for Tier 1 industry events</li>
+          <li>Created strategic processes to unify messaging across business lines into a cohesive one-Visa narrative</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-dates">May 2023 – Mar 2024</div>
+      <div>
+        <div class="career-co">Kustomer</div>
+        <div class="career-title">Corporate Marketing Director</div>
+        <ul class="career-bullets">
+          <li>Led all product marketing initiatives and launched 3 new products including 2 AI advancements; defined pricing tiers and packaging strategies</li>
+          <li>Executed multi-channel relaunch campaign including AI-focused webinar influencing $7M in ARR</li>
+          <li>Increased share of voice 60% within 7 months of Meta divestiture through earned media, blogs, and social</li>
+          <li>Built KPI framework linking launch execution to revenue performance and adoption metrics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-dates">Oct 2022 – May 2023</div>
+      <div>
+        <div class="career-co">Meta</div>
+        <div class="career-title">Corporate Marketing Lead, Kustomer</div>
+        <ul class="career-bullets">
+          <li>Integrated campaign across digital, audio, print, OOH, and community reaching 50K+ prospects and touching $2M in pipe</li>
+          <li>Defined segmentation and GTM strategy to sharpen core audience targeting, impacting $2.6M in pipeline</li>
+          <li>Developed corporate event strategy for conferences and industry events</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-dates">2011 – 2022</div>
+      <div>
+        <div class="career-co">Salesforce</div>
+        <div class="career-title">Senior Product Marketing Manager, Service Cloud</div>
+        <ul class="career-bullets">
+          <li>Designed Human-Centric Service narrative for Dreamforce '19 keynote — 3,500 in-person and 465K+ live online viewers</li>
+          <li>Crafted Service Cloud messaging and developed content for two enablement kick-off series enabling 2,000 sellers globally</li>
+          <li>Built, launched, and scaled the Service Cloud Customer Advisory Board across AMER, EMEA, and APAC</li>
+          <li>Owned Dreamforce 2021 advocacy programming; guided 60+ team members for 7,500+ viewers</li>
+          <li>Pivoted to virtual event strategy during COVID impacting $1.5B ACV in FY22 at 26% YoY growth</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Skills -->
+  <div class="skills-section reveal">
+    <div class="kicker">Skills &amp; Tools</div>
+    <div class="skills-grid">
+      <span class="skill-tag">Product Marketing</span>
+      <span class="skill-tag">Go-to-Market Strategy</span>
+      <span class="skill-tag">PR / AR</span>
+      <span class="skill-tag">Positioning &amp; Messaging</span>
+      <span class="skill-tag">Pricing &amp; Monetization</span>
+      <span class="skill-tag">Voice of Customer</span>
+      <span class="skill-tag">Analyst Relations</span>
+      <span class="skill-tag">Integrated Marketing</span>
+      <span class="skill-tag">Customer Advocacy</span>
+      <span class="skill-tag">Brand &amp; Content Strategy</span>
+      <span class="skill-tag">Salesforce</span>
+      <span class="skill-tag">HubSpot</span>
+      <span class="skill-tag">Klue</span>
+      <span class="skill-tag">Gong</span>
+      <span class="skill-tag">Claude</span>
+      <span class="skill-tag">ChatGPT</span>
+      <span class="skill-tag">Gemini</span>
+      <span class="skill-tag">Perplexity</span>
+      <span class="skill-tag">Lovable</span>
+      <span class="skill-tag">Asana</span>
+      <span class="skill-tag">Smartsheets</span>
+      <span class="skill-tag">Adobe Creative Cloud</span>
+    </div>
+  </div>
+
+  <!-- Education & Affiliations -->
+  <div class="edu-grid reveal">
+    <div class="edu-card">
+      <div class="edu-label">Education</div>
+      <div class="edu-line">B.A. English — University of Virginia</div>
+      <div class="edu-line">Atlantic 10 All-Conference, Women's Tennis · GWU</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-label">Affiliations</div>
+      <div class="edu-line">Chair, Board Member — John E. Fogarty Foundation (IDD), Providence RI</div>
+      <div class="edu-line">Mentor — Year Up Providence</div>
+    </div>
+  </div>
+
+</div>
+</div><!-- end top-career -->
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="page">
+    <div class="foot-inner">
+      <p>Mercedes McAndrew · PMM Brief for Dataiku · 2026</p>
+      <p>Not a cover letter — a proof of work</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── Top-level tab switching ── */
+function switchTop(id, btn) {
+  document.querySelectorAll('.tpage').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tnt').forEach(b => b.classList.remove('active'));
+  document.getElementById('top-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+/* ── JD interactive match ── */
+const proofMap = {
+  narrative:'pk-narrative', launches:'pk-launches', governance:'pk-governance',
+  analysts:'pk-analysts', exec:'pk-exec', years:'pk-years',
+  ai:'pk-ai', pricing:'pk-pricing', builder:'pk-builder'
+};
+let activeKey = 'narrative';
+
+function selectJD(el, key) {
+  document.querySelectorAll('.jdi').forEach(i => i.classList.remove('active'));
+  Object.values(proofMap).forEach(id => {
+    const s = document.getElementById(id);
+    if (s) { s.style.display = 'none'; }
+  });
+
+  if (activeKey === key) { activeKey = null; return; }
+
+  el.classList.add('active');
+  activeKey = key;
+
+  const stack = document.getElementById(proofMap[key]);
+  if (stack) {
+    stack.style.display = 'flex';
+    stack.style.flexDirection = 'column';
+    stack.style.gap = '8px';
+    stack.querySelectorAll('.pcard').forEach((c, i) => {
+      c.classList.remove('vis');
+      setTimeout(() => c.classList.add('vis'), i * 80);
+    });
+  }
+}
+
+
+/* ── Scroll reveal ── */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 55);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
