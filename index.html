@@ -310,7 +310,96 @@ footer p{
   letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);
 }
 
-/* ─── REVEAL ─── */
+/* ════════════════════════════
+   MOBILE RESPONSIVE
+════════════════════════════ */
+@media(max-width:768px){
+
+  /* Wrapper padding */
+  .page{padding:0 16px}
+
+  /* Nav */
+  .top-nav{
+    padding:0 16px;height:auto;
+    flex-wrap:wrap;gap:10px;
+    padding-top:12px;padding-bottom:12px;
+  }
+  .tn-brief{display:none}
+  .tn-pipe{display:none}
+  .tn-name{font-size:12px}
+  .tn-role{font-size:9px}
+
+  /* Tab bar */
+  .tab-bar-inner{
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .tab-bar-inner::-webkit-scrollbar{display:none}
+  .tnt{padding:12px 14px;font-size:12.5px}
+
+  /* Tab bar sticky offset */
+  .tab-bar-wrap{top:70px}
+
+  /* Hero */
+  .hero{padding:36px 0 32px}
+  .hero h1{font-size:32px;line-height:1.1}
+  .hero-sub{font-size:14px}
+  .chips{gap:6px}
+  .chip{font-size:9px;padding:4px 9px}
+
+  /* Section headings */
+  h2{font-size:22px;margin-bottom:20px}
+
+  /* Intro box */
+  .intro-box{padding:14px 16px}
+  .intro-box p{font-size:13px}
+
+  /* JD Match — stack columns */
+  .match-layout{grid-template-columns:1fr;gap:24px}
+  .panel-label{font-size:9px}
+  .jdi{padding:11px 13px}
+  .jdi-text{font-size:12.5px}
+  .pcard{padding:14px 16px}
+  .pcard-title{font-size:13px}
+  .pcard-body{font-size:12.5px}
+
+  /* Impact stats */
+  .stat-row{grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+  .stat-card{padding:14px}
+  .stat-n{font-size:26px}
+  .stat-label{font-size:9px}
+  .impact-grid{grid-template-columns:1fr;gap:10px}
+  .impact-card{padding:16px}
+
+  /* Career */
+  .career-item{
+    grid-template-columns:1fr;gap:4px;
+    padding:20px 0;
+  }
+  .career-dates{font-size:10px;margin-bottom:4px}
+  .career-co{font-size:14px}
+  .career-title{font-size:12px}
+  .career-bullets li{font-size:12.5px}
+
+  /* Education grid */
+  .edu-grid{grid-template-columns:1fr;gap:8px;margin-top:24px}
+  .edu-card{padding:16px}
+  .edu-line{font-size:13px}
+
+  /* Skills */
+  .skills-grid{gap:6px}
+  .skill-tag{font-size:9px;padding:4px 9px}
+
+  /* Footer */
+  footer .foot-inner{flex-direction:column;gap:6px;text-align:center}
+}
+
+@media(max-width:480px){
+  .hero h1{font-size:26px}
+  .stat-row{grid-template-columns:1fr 1fr}
+  .stat-n{font-size:22px}
+}
+
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .45s,transform .45s}
 .reveal.vis{opacity:1;transform:none}
 </style>
